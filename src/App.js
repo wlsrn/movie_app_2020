@@ -1,21 +1,40 @@
 import React from 'react';
+import PropTypes from "prop-types";
 
-function Food({ name }) {
-  return <h1>I like {name}</h1>;
+function Food({ name, picturem, rating }) {
+  return (
+    <div>
+      <h2>I kile {name}</h2>
+      <h4>{rating}/5 </h4>
+      <img src={picture} alt={name} />
+    </div>
+  );
+}
+//2.4  3:43
+Food.PropTypes={
+
 }
 
 const foodILike = [
   {
-    name : "kimchi"
+    id : 1,
+    name : "kimchi",
+    rating: 5
   },
   {
-    name : "삼겹살"
+    id : 2,
+    name : "삼겹살",
+    rating:4.9
   },
   {
-    name : "김밥"
+    id : 3,
+    name : "김밥",
+    rating:5.5
   },
   {
-    name : "족발"
+    id : 4,
+    name : "족발",
+    rating:4.7
   }
 ]
 
@@ -23,9 +42,16 @@ const foodILike = [
 function App() {
   return (
   <div>
-    {foodILike.map(dish => <Food name = {dish.name} picture = {dish.image} />)}
+   {foodILike.map(dish => (
+     <Food 
+      key={dish.id}
+      name={dish.name}
+      picture={dish.imge}
+      rating={dish.rating}
+       />
+   ))}
   </div>
-  //2.2     9 : 19
+
   
   );
 }
