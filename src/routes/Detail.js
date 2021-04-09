@@ -5,5 +5,5 @@ function Detail(props){
        <span>Hello</span> 
     );
 }
-//add git
+//add git1
 export default Detail;
